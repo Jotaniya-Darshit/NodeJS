@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Style.css">
+    <title>Edit Page</title>
+</head>
+<body>
+    <center>
+        <fieldset class="form-container">
+            <legend>TO DO Form</legend>
+            <form action="/UpdateData" method="post">
+                <input type="text" hidden name="id" value="<%=specificData.id%>">
+                <input type="text" placeholder="Enter Your Task" value="<%=specificData.task%>" name="task" class="input-field"><br>
+                <input type="text" placeholder="Enter Description" value="<%=specificData.Desc%>" name="Desc" class="input-field"><br>
+                <input type="date" id="date" name="date" value="<%=specificData.date%>" class="input-field">   <br>
+                <select name="status" value="<%=specificData.status%>" class="dropdown">
+                    <option value="Incomplete">Incomplete</option>
+                    <option value="Complete">Complete</option>
+                </select>
+                <button type="submit" class="submit-btn">Update Task</button>
+            </form>
+        </fieldset>
+    </center>
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    </script>
+</body>
+</html>

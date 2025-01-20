@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Style.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <center>
+        <fieldset class="form-container">
+            <legend>TO DO Form</legend>
+            <form action="/addData" method="post">
+                <input type="text" placeholder="Enter Your Task" name="task" class="input-field"><br>
+                <input type="text" placeholder="Enter Description" name="Desc" class="input-field"><br>
+                <input type="date" id="date" name="date" class="input-field">   <br>
+                <select name="status" class="dropdown">
+                    <option value="Incomplete">Incomplete</option>
+                    <option value="Complete">Complete</option>
+                </select>
+                <button type="submit" class="submit-btn">ADD Task</button>
+            </form>
+        </fieldset>
+        <hr>
+        <div class="task-container">
+            <fieldset class="task-section">
+                <legend>Incompleted Task</legend>
+                <table class="task-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Task</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th colspan="2">Action</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% todoList.map((e, i) => { %>
+                            <% if (e.status === "Incomplete") { %>
+                                <tr>
+                                    <td><%= e.id %></td>
+                                    <td><%= e.task %></td>
+                                    <td><%= e.Desc %></td>
+                                    <td><%= new Date(e.date).toLocaleDateString('en-GB') %></td>
+                                    <td><a href="/EditData?id=<%= e.id %>"><button class="edit-btn">Edit</button></a></td>
+                                    <td><a href="/DeleteData?id=<%= e.id %>"><button class="delete-btn">Delete</button></a></td>
+                                    <td><%= e.status %></td>
+                                </tr>
+                            <% } %>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset class="task-section">
+                <legend>Completed Task</legend>
+                <table class="task-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Task</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% todoList.map((e, i) => { %>
+                            <% if (e.status === "Complete") { %>
+                                <tr>
+                                    <td><%= e.id %></td>
+                                    <td><%= e.task %></td>
+                                    <td><%= e.Desc %></td>
+                                    <td><%= new Date(e.date).toLocaleDateString('en-GB') %></td>
+                                    <td><%= e.status %></td>
+                                </tr>
+                            <% } %>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </center>
+</body>
+</html>
+<script>
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').setAttribute('min', today);
+</script>
