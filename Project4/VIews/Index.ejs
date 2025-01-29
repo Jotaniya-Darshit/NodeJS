@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/Style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>Book Form</legend>
+        <form action="/add" method="post">
+            <input type="text" placeholder="Enter Image URL" name="img">
+            <input type="text" placeholder="Enter Book Title" name="title">
+            <input type="text" placeholder="Enter Auther Name" name="author">
+            <input type="number" placeholder="Enter Book Price" name="price">
+            <input type="date" placeholder="Enter Book ReleaseDate" name="releaseDate">
+            <input type="number" placeholder="Enter Book Sold Copy" name="soldCopy">
+            <button type="submit">Add Data</button>
+        </form>
+    </fieldset>
+    <br>
+    <hr>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Auther</th>
+                <th>Price</th>
+                <th>Release Date</th>
+                <th>Sold Copy</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.map((e,i)=>{ %>
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><img src="<%=e.img%>"></td>
+                    <td><%=e.title%></td>
+                    <td><%=e.author%></td>
+                    <td><%=e.price%></td>
+                    <td><%=e.releaseDate%></td>
+                    <td><%=e.soldCopy%></td>
+                    <td><a href="/editData?id=<%=e.id%>"><button>Edit</button></a></td>
+                    <td><a href="/deleteData?id=<%=e.id%>"><button>Delete</button></a></td>
+                </tr>
+                <%})%>
+        </tbody>
+    </table>
+</body>
+</html>

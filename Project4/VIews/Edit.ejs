@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/CSS/Style.css">
+<fieldset>
+    <legend>Book Form</legend>
+    <form action="/updateData" method="post">
+        <input type="text" value="<%=specificData.id%>" name="id" hidden>
+        <input type="text"   value="<%=specificData.img%>"  placeholder="Enter Image URL" name="img">
+        <input type="text"   value="<%=specificData.title%>"  placeholder="Enter Book Title" name="title">
+        <input type="text"   value="<%=specificData.author%>"  placeholder="Enter Auther Name" name="auther">
+        <input type="number" value="<%=specificData.price%>" placeholder="Enter Book Price" name="price">
+        <input type="date" value="<%=specificData.releaseDate%>" placeholder="Enter Book ReleaseDate" name="releaseDate">
+        <input type="number" value="<%=specificData.soldCopy%>" placeholder="Enter Book Sold Copy" name="soldCopy">
+        <button type="submit">UPDATE Data</button>
+    </form>
+</fieldset>
