@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.slide {
+    background: url(./background-placeholder.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.containerr {
+    background-image: url(./district-banner-bg.png);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.content {
+    text-align: left;
+    max-width: 50%;
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo span {
+    display: block;
+    font-size: 0.6em;
+}
+
+.tagline {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-code img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+footer {
+    background: black;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a, .social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.social-icons img {
+    width: 20px;
+}
