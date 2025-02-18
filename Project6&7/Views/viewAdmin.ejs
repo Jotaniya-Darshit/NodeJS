@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>View Admin</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
+  <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <%-include('Aside')%>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <%-include('Header')%>
+      <!--  Header End -->
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-body">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title m-b-0">Admin's Data</h5>
+              </div>
+              <table class="table" border="1">
+                <thead>
+                  <tr style="text-align: center; vertical-align: middle;">
+                    <th>Profile</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Mobile No</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th colspan="2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%data.map((e,i)=>{%>
+                    <tr style="text-align: center; vertical-align: middle;"> 
+                      <td class="d-flex justify-content-center"><img src="<%=e.image%>" alt="" style="max-width: 100px; height: auto;"></td> 
+                      <td><%=e.name%></td> 
+                      <td><%=e.gender%></td>
+                      <td><%=e.cntnum%></td> 
+                      <td><%=e.email%></td> 
+                      <td><%=e.password%></td> 
+                      <td><a href="/editData?id=<%=e.id%>" ><button class="btn btn-primary">Edit</button></a></td> 
+                      <td><a href="/deleteAdmin?id=<%=e.id%>"><button  class="btn btn-danger">Delete</button></a></td> 
+                    </tr>
+                  <%})%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="py-6 px-6 text-center">
+          <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank"
+              class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com/" target="_blank"
+              class="pe-1 text-primary text-decoration-underline">ThemeWagon</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
