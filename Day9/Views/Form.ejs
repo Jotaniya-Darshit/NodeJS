@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/quill/dist/quill.snow.css">
+    <link href="dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <%-include("Header")%>
+        <%-include("Aside")%>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <form method="post" action="/AddData" enctype="multipart/form-data" class="form-horizontal">
+                                <div class="card-body">
+                                    <h4 class="card-title">Personal Info</h4>
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">First Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Last Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 text-right control-label col-form-label">City</label>
+                                        <div class="col-md-9">
+                                            <select class="select2 form-control custom-select" name="city" style="width: 100%; height:36px;">
+                                                <option>Select</option>
+                                                <option value="Rajkot">Rajkot</option>
+                                                <option value="Surat">Surat</option>
+                                                <option value="Mumbai">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="email1" name="email" placeholder="Email Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Password</label>
+                                        <div class="col-sm-9">
+                                            <input type="password" class="form-control" id="lname" name="password" placeholder="Password Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label">Gender</label>
+                                    <div class="col-md-9">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" id="customControlValidation1" name="gender" value="Male" required>
+                                            <label class="custom-control-label" for="customControlValidation1">Male</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" id="customControlValidation2" name="gender" value="Female" required>
+                                            <label class="custom-control-label" for="customControlValidation2">Female</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label">Hobby</label>
+                                    <div class="col-md-9">
+                                        <div class="custom-control custom-checkbox mr-sm-2">
+                                            <input type="checkbox" class="custom-control-input" name="hobby" value="Cricket" id="customControlAutosizing1">
+                                            <label class="custom-control-label" for="customControlAutosizing1">Cricket</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mr-sm-2">
+                                            <input type="checkbox" class="custom-control-input" name="hobby" value="Hockey" id="customControlAutosizing2">
+                                            <label class="custom-control-label" for="customControlAutosizing2">Hockey</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mr-sm-2">
+                                            <input type="checkbox" class="custom-control-input" name="hobby" value="Football" id="customControlAutosizing3">
+                                            <label class="custom-control-label" for="customControlAutosizing3">Football</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mr-sm-2">
+                                            <input type="checkbox" class="custom-control-input" name="hobby" value="Chess" id="customControlAutosizing4">
+                                            <label class="custom-control-label" for="customControlAutosizing4">Chess</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mr-sm-2">
+                                            <input type="checkbox" class="custom-control-input" name="hobby" value=""Carrom id="customControlAutosizing5">
+                                            <label class="custom-control-label" for="customControlAutosizing5">Carrom</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 text-right control-label col-form-label">File Upload</label>
+                                    <div class="col-md-9">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="img" id="validatedCustomFile" required>
+                                            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <footer class="footer text-center">
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <!-- This Page JS -->
+    <script src="assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="dist/js/pages/mask/mask.init.js"></script>
+    <script src="assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="assets/libs/select2/dist/js/select2.min.js"></script>
+    <script src="assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+    <script src="assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+    <script src="assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+    <script src="assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/libs/quill/dist/quill.min.js"></script>
+    <script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
+
+        /*colorpicker*/
+        $('.demo').each(function() {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function(value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+    </script>
+</body>
+
+</html>
