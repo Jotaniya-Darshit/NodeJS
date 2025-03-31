@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1e;
+            color: #f5f5f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            background: linear-gradient(145deg, #262628, #1f1f21);
+            border-bottom: 1px solid #ff6f61;
+        }
+        .navbar-brand, .nav-link {
+            color: #f5f5f7 !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ff6f61 !important;
+        }
+        .hero-section {
+            background: linear-gradient(145deg, #262628, #1f1f21);
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        }
+        .hero-section h1 {
+            color: #ff6f61;
+        }
+        .card {
+            background: #262628;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .card-title {
+            color: #ff6f61;
+        }
+        .card-text {
+            color: #f5f5f7;
+        }
+        .btn-primary {
+            background-color: #ff6f61;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #ff5748;
+        }
+        .form-section {
+            background: linear-gradient(145deg, #262628, #1f1f21);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        }
+        .form-section h2 {
+            color: #ff6f61;
+            margin-bottom: 2rem;
+        }
+        .form-group input, .form-group textarea {
+            background-color: #2b2b2d;
+            color: #f5f5f7;
+            border: 1px solid #3c3c3e;
+            padding: 1rem;
+            border-radius: 8px;
+            width: 100%;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: #ff6f61;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #ff5748;
+        }
+        footer {
+            background: #1f1f21;
+            padding: 2rem 0;
+            color: #f5f5f7;
+            text-align: center;
+            border-top: 1px solid #ff6f61;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">MyBlog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addBlog">Add Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/viewBlog">View Blog</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3" href="/logout">LogOut</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="form-section">
+            <h2 class="text-center">Edit Blog</h2>
+            <form action="/editBlog" method="POST">
+                <input type="hidden" name="id" value="<%=data._id%>">
+                <div class="form-group">
+                    <label for="author" class="text-white">Author Name</label>
+                    <input type="text" id="author" name="author" placeholder="Enter your name" value="<%=data.author%>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category" class="text-white">Category</label>
+                    <input type="text" id="category" name="category" placeholder="Enter category" value="<%=data.category%>" required>
+                </div>
+                <div class="form-group">
+                    <label for="blogContent" class="text-white">Blog Content</label>
+                    <input type="text" id="blogContent" name="blogContent"  placeholder="Write your blog here..." value="<%=data.blogContent%>" required>
+                </div>
+
+               
+
+                <div class="form-group text-center">
+                    <button type="submit" class="submit-btn">Update Blog</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MyBlog. All rights reserved.</p>
+            <p>Follow us on:
+                <a href="#" class="text-decoration-none">Facebook</a>,
+                <a href="#" class="text-decoration-none">Twitter</a>,
+                <a href="#" class="text-decoration-none">Instagram</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

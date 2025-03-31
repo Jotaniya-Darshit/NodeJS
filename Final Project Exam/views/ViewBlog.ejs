@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Blogs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1e;
+            color: #f5f5f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            background: linear-gradient(145deg, #262628, #1f1f21);
+            border-bottom: 1px solid #ff6f61;
+        }
+        .navbar-brand, .nav-link {
+            color: #f5f5f7 !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ff6f61 !important;
+        }
+        .hero-section {
+            background: linear-gradient(145deg, #262628, #1f1f21);
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        }
+        .hero-section h1 {
+            color: #ff6f61;
+        }
+        .card {
+            background: #262628;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .card-title {
+            color: #ff6f61;
+        }
+        .card-text {
+            color: #f5f5f7;
+        }
+        .btn-primary {
+            background-color: #ff6f61;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #ff5748;
+        }
+        footer {
+            background: #1f1f21;
+            padding: 2rem 0;
+            color: #f5f5f7;
+            text-align: center;
+            border-top: 1px solid #ff6f61;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">MyBlog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addBlog">Add Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/viewBlog">View Blog</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3" href="/logout">LogOut</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="hero-section">
+            <h1 class="text-center">All Blog Posts</h1>
+            <p class="text-center">Here are the blogs that you've added!</p>
+        </div>
+
+        <div class="row mt-5">
+           <%data.map((e)=>{%>
+            <div class="card my-3">
+                <div class="card-header">
+                 <h3 class="card-title"><%=e.author%></h3>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><%=e.category%></h5>
+                  <p class="card-text"><%=e.blogContent%></p>
+                  <a href="/edit?id=<%=e._id%>" ><button class="btn btn-primary">Edit</button></a>
+                  <a href="/delete?id=<%=e._id%>" ><button class="btn btn-primary">Delete</button></a>
+                </div>
+              </div>
+          <% })%>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MyBlog. All rights reserved.</p>
+            <p>Follow us on:
+                <a href="#" class="text-decoration-none">Facebook</a>,
+                <a href="#" class="text-decoration-none">Twitter</a>,
+                <a href="#" class="text-decoration-none">Instagram</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #333 !important;
+}
+
+.nav-link {
+    color: #555 !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #007bff !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.why-choose {
+    background: #ffffff;
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.why-choose h2 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.why-choose h5 {
+    color: #333;
+}
+
+.why-choose p {
+    color: #666;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: #00c6ff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+    </style>
+</head>
+<body>
+    <%-include("NavBar")%>
+    <div class="container mt-5">
+        <div class="hero-section">
+            <h1>Welcome to MyBlog</h1>
+            <p>Your go-to platform for exciting blogs and articles.</p>
+            <a href="/signup" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/uploads/img1.jpg" class="card-img-top img-fluid" alt="Blog 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Title 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/uploads/img2.jpg" class="card-img-top img-fluid" alt="Blog 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Title 2</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/uploads/img3.jpg" class="card-img-top img-fluid" alt="Blog 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Title 3</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-choose">
+            <h2 class="text-center">Why Choose MyBlog?</h2>
+            <p class="text-center">We provide insightful articles and engaging content on a variety of topics to keep you informed and entertained.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Wide Variety of Topics</h5>
+                    <p>Explore articles ranging from technology to lifestyle, ensuring there's something for everyone.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Expert Writers</h5>
+                    <p>Our content is created by experienced writers to ensure quality and reliability.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Community Driven</h5>
+                    <p>Join our vibrant community of readers and share your thoughts through comments and feedback.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MyBlog. All rights reserved.</p>
+            <p>Follow us on:
+                <a href="#" class="text-decoration-none">Facebook</a>,
+                <a href="#" class="text-decoration-none">Twitter</a>,
+                <a href="#" class="text-decoration-none">Instagram</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
