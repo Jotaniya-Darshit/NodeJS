@@ -1,5 +1,5 @@
 const express = require("express");
-const port = 8000;
+const port = 5173;
 const app = express();
 const db = require("./config/db");
 const cookies = require("cookie-parser");
@@ -15,6 +15,6 @@ app.listen(port, (err) => {
     if (err) {
         console.log(err);
     } else {
-        console.log("Server started at " + port);
+        console.log(`Server is running on http://localhost:${port}`);
     }
 });
